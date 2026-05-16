@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abogados DVA — Especialistas en Extranjería Madrid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1C2B4A;
+    --dark: #2C2C2C;
+    --gold: #B8960C;
+    --gold-light: #D4AD1A;
+    --cream: #F5F3EE;
+    --white: #FFFFFF;
+    --gray: #6B7280;
+    --border: #E2DDD5;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Source Sans 3', sans-serif; color: var(--dark); background: var(--white); }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(28,43,74,0.97); backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%; height: 68px;
+    border-bottom: 1px solid rgba(184,150,12,0.3);
+  }
+  .nav-logo { font-family: 'Merriweather', serif; color: var(--white); font-size: 1.2rem; font-weight: 700; letter-spacing: 0.02em; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--navy); padding: 0.55rem 1.4rem;
+    border: none; font-family: 'Source Sans 3', sans-serif; font-weight: 700;
+    font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.2s, transform 0.15s;
+    text-decoration: none; display: inline-block;
+  }
+  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: 0.3s; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--navy) 0%, #0D1A33 60%, #1a2a50 100%);
+    display: flex; align-items: center; position: relative; overflow: hidden;
+    padding: 100px 5% 60px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0; width: 50%; height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='600' height='800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M300 0 L600 200 L600 800 L0 800 Z' fill='rgba(184,150,12,0.04)'/%3E%3C/svg%3E") no-repeat right center / cover;
+  }
+  .hero-content { max-width: 660px; position: relative; z-index: 2; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(184,150,12,0.15); border: 1px solid rgba(184,150,12,0.4);
+    color: var(--gold); padding: 0.4rem 1rem; font-size: 0.8rem;
+    font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem;
+  }
+  .hero-badge svg { width: 14px; height: 14px; fill: var(--gold); }
+  .hero h1 {
+    font-family: 'Merriweather', serif; font-size: clamp(2.2rem, 4vw, 3.4rem);
+    color: var(--white); line-height: 1.2; font-weight: 900; margin-bottom: 1.2rem;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  .hero-sub {
+    font-size: 1.15rem; color: rgba(255,255,255,0.75); line-height: 1.7;
+    margin-bottom: 2.5rem; font-weight: 300;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy); padding: 1rem 2.2rem;
+    font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 1rem;
+    border: none; cursor: pointer; transition: background 0.2s, transform 0.15s;
+    text-decoration: none; display: inline-block; letter-spacing: 0.03em;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent; color: var(--white); padding: 1rem 2.2rem;
+    border: 1px solid rgba(255,255,255,0.4); font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600; font-size: 1rem; cursor: pointer;
+    transition: border-color 0.2s, background 0.2s; text-decoration: none; display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); background: rgba(184,150,12,0.08); }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-top: 3rem; padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap;
+  }
+  .hero-stat { }
+  .hero-stat strong { display: block; font-family: 'Merriweather', serif; font-size: 1.8rem; color: var(--gold); font-weight: 900; }
+  .hero-stat span { font-size: 0.82rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.06em; }
+  .hero-visual {
+    position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
+    width: 380px; height: 480px; display: none;
+  }
+
+  /* URGENCY BANNER */
+  .urgency-banner {
+    background: var(--gold); color: var(--navy);
+    text-align: center; padding: 0.85rem 5%;
+    font-weight: 700; font-size: 0.95rem; letter-spacing: 0.02em;
+  }
+  .urgency-banner strong { text-decoration: underline; text-decoration-color: var(--navy); }
+
+  /* SERVICES */
+  section { padding: 90px 5%; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .section-title { font-family: 'Merriweather', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--navy); line-height: 1.25; font-weight: 700; margin-bottom: 1rem; }
+  .section-sub { font-size: 1.05rem; color: var(--gray); line-height: 1.7; max-width: 560px; }
+
+  .services { background: var(--cream); }
+  .services-header { text-align: center; margin-bottom: 3.5rem; }
+  .services-header .section-sub { margin: 0 auto; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5px; background: var(--border); }
+  .service-card {
+    background: var(--white); padding: 2.5rem 2rem;
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: default;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(28,43,74,0.12); z-index: 2; position: relative; }
+  .service-icon {
+    width: 52px; height: 52px; background: var(--navy);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;
+  }
+  .service-icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+  .service-card h3 { font-family: 'Merriweather', serif; font-size: 1.15rem; color: var(--navy); font-weight: 700; margin-bottom: 0.7rem; }
+  .service-card p { font-size: 0.95rem; color: var(--gray); line-height: 1.65; }
+  .service-tag { display: inline-block; margin-top: 1rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); }
+
+  /* ABOUT */
+  .about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-visual {
+    background: var(--navy); position: relative; height: 440px;
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .about-visual-inner {
+    text-align: center; padding: 3rem;
+  }
+  .about-visual svg { width: 80px; height: 80px; stroke: rgba(184,150,12,0.6); fill: none; stroke-width: 1; margin-bottom: 1.5rem; }
+  .about-visual p { font-family: 'Merriweather', serif; font-size: 1.3rem; color: rgba(255,255,255,0.9); line-height: 1.6; font-style: italic; }
+  .about-visual::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+    background: var(--gold);
+  }
+  .about-content .section-label { margin-bottom: 0.6rem; }
+  .about-content .section-title { margin-bottom: 1.2rem; }
+  .about-content p { font-size: 1rem; color: var(--gray); line-height: 1.75; margin-bottom: 1.2rem; }
+  .trust-list { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
+  .trust-list li { display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem; font-weight: 600; color: var(--dark); }
+  .trust-list li svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 2; flex-shrink: 0; }
+
+  /* REGULARIZACION 2026 */
+  .highlight-section {
+    background: var(--navy); color: var(--white); padding: 90px 5%;
+  }
+  .highlight-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .highlight-inner .section-label { color: var(--gold); }
+  .highlight-inner .section-title { color: var(--white); margin-bottom: 1.2rem; }
+  .highlight-inner p { color: rgba(255,255,255,0.75); font-size: 1.05rem; line-height: 1.75; margin-bottom: 2.5rem; }
+  .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: left; margin-bottom: 3rem; }
+  .step { border-left: 3px solid var(--gold); padding-left: 1.2rem; }
+  .step-num { font-family: 'Merriweather', serif; font-size: 2rem; color: var(--gold); font-weight: 900; line-height: 1; margin-bottom: 0.5rem; }
+  .step h4 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
+  .step p { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.55; }
+
+  /* TESTIMONIALS */
+  .testimonials { background: var(--cream); }
+  .testimonials-header { text-align: center; margin-bottom: 3rem; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .testimonial-card {
+    background: var(--white); padding: 2rem; border-left: 4px solid var(--gold);
+    transition: box-shadow 0.25s;
+  }
+  .testimonial-card:hover { box-shadow: 0 8px 30px rgba(28,43,74,0.1); }
+  .testimonial-stars { display: flex; gap: 3px; margin-bottom: 1rem; }
+  .testimonial-stars svg { width: 16px; height: 16px; fill: var(--gold); }
+  .testimonial-card p { font-size: 0.95rem; color: var(--dark); line-height: 1.7; font-style: italic; margin-bottom: 1.2rem; }
+  .testimonial-author { font-weight: 700; font-size: 0.88rem; color: var(--navy); }
+  .testimonial-detail { font-size: 0.8rem; color: var(--gray); }
+
+  /* CONTACT */
+  .contact { background: var(--white); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .contact-info .section-title { margin-bottom: 1.2rem; }
+  .contact-info p { color: var(--gray); line-height: 1.7; margin-bottom: 2rem; }
+  .contact-details { display: flex; flex-direction: column; gap: 1.2rem; }
+  .contact-item { display: flex; align-items: center; gap: 1rem; }
+  .contact-item-icon { width: 44px; height: 44px; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .contact-item-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+  .contact-item-text strong { display: block; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); font-weight: 700; margin-bottom: 0.2rem; }
+  .contact-item-text span { font-size: 0.95rem; color: var(--dark); }
+
+  .contact-form { background: var(--cream); padding: 2.5rem; }
+  .form-title { font-family: 'Merriweather', serif; font-size: 1.2rem; color: var(--navy); font-weight: 700; margin-bottom: 1.5rem; }
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label { display: block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.4rem; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border);
+    font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; color: var(--dark);
+    background: var(--white); outline: none; transition: border-color 0.2s;
+    appearance: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--navy); }
+  .form-group textarea { height: 100px; resize: vertical; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .submit-btn {
+    width: 100%; background: var(--navy); color: var(--white);
+    padding: 1rem; border: none; font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700; font-size: 1rem; cursor: pointer; letter-spacing: 0.04em;
+    text-transform: uppercase; transition: background 0.2s;
+  }
+  .submit-btn:hover { background: var(--gold); color: var(--navy); }
+
+  /* FOOTER */
+  footer {
+    background: #0D1A33; color: rgba(255,255,255,0.6);
+    padding: 3rem 5%; display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: gap; gap: 1.5rem;
+  }
+  .footer-logo { font-family: 'Merriweather', serif; color: var(--white); font-size: 1.1rem; font-weight: 700; }
+  .footer-logo span { color: var(--gold); }
+  .footer-copy { font-size: 0.85rem; text-align: center; }
+  .footer-right { font-size: 0.82rem; text-align: right; }
+  .footer-right a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-right a:hover { color: var(--gold); }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-visual { height: 260px; }
+    .hero-stats { gap: 1.5rem; }
+    footer { flex-direction: column; text-align: center; }
+    .footer-right { text-align: center; }
+    .form-grid { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Abogados <span>DVA</span></div>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#regularizacion">Regularización 2026</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">Consulta Gratuita</a>
+  <div class="hamburger" onclick="document.querySelector('.nav-links').style.display='flex'">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="urgency-banner">
+  <strong>Regularización 2026 ya en marcha.</strong> Plazos limitados — consulta tu situación hoy sin compromiso.
+</div>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Especialistas en Extranjería · Madrid
+    </div>
+    <h1>Tu permiso de residencia, <em>sin complicaciones</em></h1>
+    <p class="hero-sub">Más de 15 años resolviendo casos de extranjería para nacionales de toda Latinoamérica y el mundo. Arraigo, NIE, regularización y reagrupación familiar con garantías.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary">Primera Consulta Gratuita</a>
+      <a href="#servicios" class="btn-outline">Ver Servicios</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>+2.800</strong><span>casos resueltos</span></div>
+      <div class="hero-stat"><strong>15+</strong><span>años de experiencia</span></div>
+      <div class="hero-stat"><strong>96%</strong><span>tasa de éxito</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicios">
+  <div class="services-header">
+    <div class="section-label">Áreas de práctica</div>
+    <h2 class="section-title">Soluciones legales para cada situación migratoria</h2>
+    <p class="section-sub">Desde el NIE hasta la nacionalidad española, acompañamos cada paso del proceso con estrategia y precisión.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M8 8h8M8 16h4"/></svg>
+      </div>
+      <h3>Arraigo Social y Laboral</h3>
+      <p>Regularización de situación irregular para quienes llevan 3 años en España. Preparación del expediente, informe de arraigo y defensa ante la Administración.</p>
+      <span class="service-tag">→ Más solicitado</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <h3>Permiso de Trabajo y Residencia</h3>
+      <p>Gestión integral de autorizaciones iniciales, renovaciones y modificaciones. Permisos por cuenta propia o ajena con máxima agilidad.</p>
+      <span class="service-tag">→ Gestión ágil</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>Reagrupación Familiar</h3>
+      <p>Unión legal con tu familia en España. Gestionamos el visado de reagrupación para cónyuge, hijos y ascendientes con máximas garantías.</p>
+      <span class="service-tag">→ Reunidos en España</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <h3>Nacionalidad Española</h3>
+      <p>Proceso de adquisición de la nacionalidad por residencia, matrimonio o carta de naturaleza. Preparación del examen CCSE y DELE si es necesario.</p>
+      <span class="service-tag">→ El paso definitivo</span>
+    </div>
+  </div>
+</section>
+
+<section class="highlight-section" id="regularizacion">
+  <div class="highlight-inner">
+    <div class="section-label">Programa especial</div>
+    <h2 class="section-title">Regularización 2026 — Actúa antes de que cierren los plazos</h2>
+    <p>La nueva normativa amplía las posibilidades de regularización para miles de personas en situación irregular. Las ventanas de oportunidad son limitadas. Nuestro equipo ya está tramitando expedientes del nuevo programa.</p>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Diagnóstico gratuito</h4>
+        <p>Analizamos tu situación migratoria y te decimos qué vía encaja mejor contigo.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Preparación del expediente</h4>
+        <p>Recopilamos y verificamos cada documento para que no haya margen de error.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Presentación y seguimiento</h4>
+        <p>Presentamos tu solicitud y hacemos seguimiento activo hasta resolución favorable.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Permiso en tu mano</h4>
+        <p>Te acompañamos hasta la recogida del documento y la primera renovación.</p>
+      </div>
+    </div>
+    <a href="#contacto" class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+  </div>
+</section>
+
+<section class="about" id="nosotros">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-visual-inner">
+        <svg viewBox="0 0 80 80"><path d="M40 10 L70 25 L70 55 L40 70 L10 55 L10 25 Z" stroke-width="1"/><path d="M40 20 L60 30 L60 50 L40 60 L20 50 L20 30 Z" stroke-width="1" stroke-dasharray="3 3"/></svg>
+        <p>"El derecho al arraigo no es un privilegio. Es una segunda oportunidad que merece el mejor defensor."</p>
+      </div>
+    </div>
+    <div class="about-content">
+      <div class="section-label">Quiénes somos</div>
+      <h2 class="section-title">Abogados con trayectoria. Resultados que hablan.</h2>
+      <p>Abogados DVA nació con un objetivo claro: hacer el proceso migratorio accesible, transparente y efectivo. Más de 15 años en Madrid dedicados exclusivamente a extranjería nos han dado algo que ningún manual enseña: el conocimiento de los matices que hacen ganar un caso.</p>
+      <p>Atendemos en castellano, inglés, árabe y rumano. Porque la barrera idiomática nunca debería ser un obstáculo para acceder a la justicia.</p>
+      <ul class="trust-list">
+        <li>
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Colegiados en el Ilustre Colegio de Abogados de Madrid
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Expedientes resueltos en todas las Delegaciones de Gobierno
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Atención presencial, online y por WhatsApp
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Honorarios transparentes desde el primer día
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="testimonials-header">
+    <div class="section-label">Clientes</div>
+    <h2 class="section-title">Lo que dicen quienes confiaron en nosotros</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p>"Llevaba 4 años en España sin papeles. En 7 meses con DVA tengo mi tarjeta de residencia. Me explicaron todo desde el principio y nunca me dejaron solo."</p>
+      <div class="testimonial-author">Carlos M.</div>
+      <div class="testimonial-detail">Arraigo Social · Colombia</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p>"Gestión perfecta de la reagrupación familiar. Trámite resuelto en tiempo récord y con total transparencia en los costes. Lo recomiendo al 100%."</p>
+      <div class="testimonial-author">Fatima R.</div>
+      <div class="testimonial-detail">Reagrupación Familiar · Marruecos</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p>"Conseguí la nacionalidad española después de 5 años de residencia legal. El equipo de DVA preparó todo el expediente y me ayudó con el examen CCSE. ¡Gracias!"</p>
+      <div class="testimonial-author">Ana V.</div>
+      <div class="testimonial-detail">Nacionalidad Española · Venezuela</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-label">Contacto</div>
+      <h2 class="section-title">Primera consulta gratuita y sin compromiso</h2>
+      <p>Cuéntanos tu caso. Nuestros abogados analizarán tu situación y te dirán exactamente qué opciones tienes. Sin rodeos, sin sorpresas en la factura.</p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>Dirección</strong>
+            <span>Calle Gran Vía 45, 3ª planta · Madrid 28013</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.06 6.06l1.12-1.12a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>Teléfono / WhatsApp</strong>
+            <span>+34 91 XXX XX XX</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>Email</strong>
+            <span>info@abogadosdva.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-title">Solicitar consulta gratuita</div>
+      <form>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" placeholder="+34 6XX XXX XXX">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="tu@email.com">
+        </div>
+        <div class="form-group">
+          <label>Servicio de interés</label>
+          <select>
+            <option value="">Selecciona tu caso</option>
+            <option>Arraigo Social / Laboral</option>
+            <option>Regularización 2026</option>
+            <option>Permiso de Trabajo y Residencia</option>
+            <option>Reagrupación Familiar</option>
+            <option>Nacionalidad Española</option>
+            <option>NIE / Certificado UE</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Cuéntanos tu situación</label>
+          <textarea placeholder="Describe brevemente tu caso para que podamos preparar la consulta..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Enviar solicitud gratuita</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Abogados <span>DVA</span></div>
+  <div class="footer-copy">© 2026 Abogados DVA · Especialistas en Extranjería · Madrid<br>Colegiados ICAM · Todos los derechos reservados</div>
+  <div class="footer-right">
+    <a href="#">Aviso Legal</a> · <a href="#">Política de Privacidad</a><br>
+    <span style="color:rgba(184,150,12,0.7); font-size:0.75rem; margin-top:4px; display:block;">Demo profesional — diseño a medida desde 1.500€</span>
+  </div>
+</footer>
+
+</body>
+</html>
