@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abogados DVA · Extranjería y Regularización en Madrid</title>
+<meta name="description" content="Despacho de abogados especialista en extranjería, regularización y derecho de familia en Madrid. Consulta gratuita. Resultados desde 2009.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --azul: #1C2B4A;
+    --azul-medio: #263D6B;
+    --carbon: #2C2C2C;
+    --oro: #B8960C;
+    --oro-claro: #D4AF37;
+    --beige: #F8F6F1;
+    --gris: #666666;
+    --gris-claro: #EBEBEB;
+    --blanco: #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--carbon);
+    background: var(--blanco);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--azul);
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    border-bottom: 2px solid var(--oro);
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+  }
+  .nav-brand-letters {
+    font-family: 'Merriweather', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--oro-claro);
+    letter-spacing: 0.05em;
+  }
+  .nav-brand-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(184,150,12,0.4);
+  }
+  .nav-brand-full {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--oro-claro); }
+  .nav-cta {
+    background: var(--oro) !important;
+    color: var(--blanco) !important;
+    padding: 0.5rem 1.3rem;
+    font-weight: 600;
+  }
+  .nav-cta:hover { background: var(--oro-claro) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--azul);
+    display: flex;
+    align-items: center;
+    padding-top: 68px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 45%;
+    background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=900&q=80&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--oro) 0%, transparent 60%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding: 4rem 3rem;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--oro);
+    color: var(--blanco);
+    padding: 0.35rem 1rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  .hero h1 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(2rem, 3.5vw, 3.4rem);
+    color: var(--blanco);
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--oro-claro);
+  }
+  .hero p {
+    color: rgba(255,255,255,0.65);
+    font-size: 1.05rem;
+    font-weight: 300;
+    max-width: 560px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold {
+    display: inline-block;
+    background: var(--oro);
+    color: var(--blanco);
+    padding: 0.9rem 2rem;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: background 0.3s;
+  }
+  .btn-gold:hover { background: var(--oro-claro); }
+  .btn-ghost {
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.8);
+    padding: 0.9rem 2rem;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  .btn-ghost:hover { border-color: var(--oro-claro); color: var(--blanco); }
+  .hero-credenciales {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .credencial { }
+  .cred-num {
+    font-family: 'Merriweather', serif;
+    font-size: 2rem;
+    color: var(--oro-claro);
+    font-weight: 700;
+    line-height: 1;
+  }
+  .cred-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+  }
+
+  /* ESPECIALIDADES */
+  .especialidades { background: var(--beige); padding: 5.5rem 3rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-tag {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+  }
+  .section-tag::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--oro);
+  }
+  .section-tag span {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro);
+    font-weight: 600;
+  }
+  .section-title {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    color: var(--azul);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .section-body {
+    color: var(--gris);
+    font-weight: 300;
+    font-size: 1rem;
+    max-width: 600px;
+  }
+  .esp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px;
+    margin-top: 3.5rem;
+    background: var(--gris-claro);
+  }
+  .esp-card {
+    background: var(--blanco);
+    padding: 2.5rem;
+    transition: background 0.3s, transform 0.2s;
+    border-top: 3px solid transparent;
+  }
+  .esp-card:hover {
+    background: var(--azul);
+    border-top-color: var(--oro);
+  }
+  .esp-card:hover .esp-title,
+  .esp-card:hover .esp-desc { color: var(--blanco); }
+  .esp-card:hover .esp-icon { color: var(--oro-claro); }
+  .esp-icon { color: var(--oro); margin-bottom: 1.2rem; transition: color 0.3s; }
+  .esp-title {
+    font-family: 'Merriweather', serif;
+    font-size: 1.05rem;
+    color: var(--azul);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+    transition: color 0.3s;
+  }
+  .esp-desc {
+    font-size: 0.88rem;
+    color: var(--gris);
+    line-height: 1.6;
+    transition: color 0.3s;
+  }
+
+  /* EXTRANJERÍA HIGHLIGHT */
+  .extran {
+    background: var(--azul);
+    padding: 5.5rem 3rem;
+  }
+  .extran .section-title { color: var(--blanco); }
+  .extran .section-body { color: rgba(255,255,255,0.65); max-width: 580px; }
+  .extran .section-tag::before { background: var(--oro); }
+  .extran .section-tag span { color: var(--oro-claro); }
+  .extran-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3.5rem;
+  }
+  .extran-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+  .extran-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.92rem;
+  }
+  .extran-item::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: var(--oro);
+    flex-shrink: 0;
+  }
+  .extran-cta-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(184,150,12,0.3);
+    padding: 2.5rem;
+  }
+  .extran-cta-title {
+    font-family: 'Merriweather', serif;
+    font-size: 1.3rem;
+    color: var(--blanco);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .extran-cta-desc {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* EQUIPO */
+  .equipo { background: var(--beige); padding: 5.5rem 3rem; }
+  .equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 3.5rem;
+  }
+  .miembro {
+    background: var(--blanco);
+    overflow: hidden;
+  }
+  .miembro-img {
+    height: 260px;
+    overflow: hidden;
+  }
+  .miembro-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.2);
+    transition: filter 0.3s;
+  }
+  .miembro:hover .miembro-img img { filter: grayscale(0); }
+  .miembro-info { padding: 1.5rem; }
+  .miembro-name {
+    font-family: 'Merriweather', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--azul);
+    margin-bottom: 0.2rem;
+  }
+  .miembro-role {
+    font-size: 0.78rem;
+    color: var(--oro);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+  }
+  .miembro-desc { font-size: 0.85rem; color: var(--gris); }
+
+  /* CONTACTO */
+  .contacto { background: var(--blanco); padding: 5.5rem 3rem; }
+  .contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .info-entry { margin-bottom: 1.8rem; }
+  .info-entry-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro);
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+  }
+  .info-entry-value { color: var(--carbon); font-size: 0.97rem; }
+  .consulta-gratis {
+    background: var(--beige);
+    border-left: 4px solid var(--oro);
+    padding: 1.2rem 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.88rem;
+    color: var(--gris);
+  }
+  .consulta-gratis strong { color: var(--azul); }
+  .fgroup { margin-bottom: 1rem; }
+  .fgroup label { display: block; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gris); margin-bottom: 0.4rem; font-weight: 600; }
+  .fgroup input,
+  .fgroup select,
+  .fgroup textarea {
+    width: 100%;
+    border: 1.5px solid var(--gris-claro);
+    background: var(--blanco);
+    padding: 0.8rem 1rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.92rem;
+    color: var(--carbon);
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .fgroup input:focus,
+  .fgroup select:focus,
+  .fgroup textarea:focus { border-color: var(--oro); }
+  .fgroup textarea { height: 100px; resize: vertical; }
+  .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .btn-enviar {
+    width: 100%;
+    background: var(--azul);
+    color: var(--blanco);
+    border: none;
+    padding: 1rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .btn-enviar:hover { background: var(--azul-medio); }
+
+  /* FOOTER */
+  footer {
+    background: var(--azul);
+    padding: 2.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 2px solid var(--oro);
+  }
+  .footer-brand {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--oro-claro);
+    letter-spacing: 0.1em;
+  }
+  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hero-content { padding: 3rem 1.5rem; }
+    .hero::before { display: none; }
+    .especialidades, .extran, .equipo, .contacto { padding: 3.5rem 1.5rem; }
+    .extran-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .extran-list { grid-template-columns: 1fr; }
+    .contacto-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .frow { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; }
+    .hero-credenciales { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+    <span class="nav-brand-letters">DVA</span>
+    <div class="nav-brand-divider"></div>
+    <span class="nav-brand-full">Abogados · Madrid</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#especialidades">Especialidades</a></li>
+    <li><a href="#extran">Extranjería</a></li>
+    <li><a href="#equipo">Equipo</a></li>
+    <li><a href="#contacto" class="nav-cta">Consulta Gratuita</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">Extranjería · Regularización · Derecho Laboral · Madrid</span>
+    <h1>Defendemos tus<br>derechos con<br><em>rigor y experiencia</em></h1>
+    <p>Somos el despacho de referencia en extranjería y regularización en Madrid. Más de 15 años obteniendo resultados para nuestros clientes.</p>
+    <div class="hero-ctas">
+      <a href="#contacto" class="btn-gold">Consulta Gratuita</a>
+      <a href="#especialidades" class="btn-ghost">Nuestras Especialidades</a>
+    </div>
+    <div class="hero-credenciales">
+      <div class="credencial">
+        <div class="cred-num">15+</div>
+        <div class="cred-label">Años de práctica</div>
+      </div>
+      <div class="credencial">
+        <div class="cred-num">5.000+</div>
+        <div class="cred-label">Casos resueltos</div>
+      </div>
+      <div class="credencial">
+        <div class="cred-num">94%</div>
+        <div class="cred-label">Tasa de éxito</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPECIALIDADES -->
+<section class="especialidades" id="especialidades">
+  <div class="container">
+    <div class="section-tag"><span>Áreas de práctica</span></div>
+    <h2 class="section-title">Nuestras especialidades jurídicas</h2>
+    <div class="esp-grid">
+      <div class="esp-card">
+        <div class="esp-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3 class="esp-title">Extranjería y Extranjeros</h3>
+        <p class="esp-desc">Visados, permisos de residencia y trabajo, reagrupación familiar, nacionalidad española. Especialistas en todos los trámites ante la Administración.</p>
+      </div>
+      <div class="esp-card">
+        <div class="esp-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="esp-title">Regularización 2026</h3>
+        <p class="esp-desc">Asistencia completa en el proceso de regularización extraordinaria. Análisis de elegibilidad, preparación de expediente y representación ante SEPE y Ministerio.</p>
+      </div>
+      <div class="esp-card">
+        <div class="esp-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="esp-title">Derecho de Familia</h3>
+        <p class="esp-desc">Divorcios, separaciones, custodia de hijos, pensiones alimenticias y de compensación. Gestión extrajudicial y judicial eficaz.</p>
+      </div>
+      <div class="esp-card">
+        <div class="esp-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3 class="esp-title">Derecho Laboral</h3>
+        <p class="esp-desc">Despidos, reclamaciones salariales, accidentes de trabajo, EREs y ERTEs. Defensa del trabajador ante la Inspección de Trabajo y Juzgados de lo Social.</p>
+      </div>
+      <div class="esp-card">
+        <div class="esp-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <h3 class="esp-title">Herencias y Testamentos</h3>
+        <p class="esp-desc">Tramitación de herencias, declaraciones de herederos, testamentos y conflictos sucesorios. Especial experiencia en herencias con bienes en el extranjero.</p>
+      </div>
+      <div class="esp-card">
+        <div class="esp-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 class="esp-title">Derecho Inmobiliario</h3>
+        <p class="esp-desc">Compraventas, alquileres, desahucios y reclamaciones de comunidades. Asesoramiento a propietarios e inquilinos en todo tipo de conflictos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXTRANJERÍA HIGHLIGHT -->
+<section class="extran" id="extran">
+  <div class="container">
+    <div class="section-tag"><span>Especialidad estrella</span></div>
+    <h2 class="section-title">Expertos en extranjería y regularización</h2>
+    <p class="section-body" style="margin-bottom:0">El proceso de regularización 2026 es una oportunidad única. En DVA llevamos años ayudando a personas a obtener su documentación en España.</p>
+    <div class="extran-grid">
+      <div>
+        <ul class="extran-list">
+          <li class="extran-item">Arraigo social y laboral</li>
+          <li class="extran-item">Reagrupación familiar</li>
+          <li class="extran-item">Residencia por circunstancias excepcionales</li>
+          <li class="extran-item">Nacionalidad española</li>
+          <li class="extran-item">Recursos contra denegaciones</li>
+          <li class="extran-item">Expulsiones y retornos</li>
+          <li class="extran-item">Visados de trabajo</li>
+          <li class="extran-item">Autorización inicial de residencia</li>
+        </ul>
+      </div>
+      <div class="extran-cta-box">
+        <h3 class="extran-cta-title">¿Puedes regularizar tu situación?</h3>
+        <p class="extran-cta-desc">En 30 minutos analizamos gratuitamente tu caso y te decimos si cumples los requisitos para el proceso de regularización 2026.</p>
+        <a href="#contacto" class="btn-gold" style="display:inline-block">Analizar mi caso — Gratis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section class="equipo" id="equipo">
+  <div class="container">
+    <div class="section-tag"><span>Nuestro equipo</span></div>
+    <h2 class="section-title">Abogados con experiencia real</h2>
+    <div class="equipo-grid">
+      <div class="miembro">
+        <div class="miembro-img">
+          <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=500&q=80&auto=format&fit=crop" alt="Abogado DVA">
+        </div>
+        <div class="miembro-info">
+          <div class="miembro-name">Daniel V. Arroyo</div>
+          <div class="miembro-role">Socio fundador · Extranjería</div>
+          <p class="miembro-desc">Licenciado en Derecho por la UAM. Especialista en extranjería y regularización. Más de 15 años de ejercicio en Madrid.</p>
+        </div>
+      </div>
+      <div class="miembro">
+        <div class="miembro-img">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500&q=80&auto=format&fit=crop" alt="Abogada DVA">
+        </div>
+        <div class="miembro-info">
+          <div class="miembro-name">Ana M. Velasco</div>
+          <div class="miembro-role">Socia · Derecho de Familia</div>
+          <p class="miembro-desc">Máster en Derecho de Familia por ICAM. Mediadora certificada. Especialista en procedimientos de divorcio y custodia.</p>
+        </div>
+      </div>
+      <div class="miembro">
+        <div class="miembro-img">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&q=80&auto=format&fit=crop" alt="Abogado DVA">
+        </div>
+        <div class="miembro-info">
+          <div class="miembro-name">Ramón García Puig</div>
+          <div class="miembro-role">Asociado · Derecho Laboral</div>
+          <p class="miembro-desc">Especialista en procedimientos ante el SMAC y Juzgados de lo Social. Experto en despidos y accidentes de trabajo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="container">
+    <div class="contacto-grid">
+      <div>
+        <div class="section-tag"><span>Contacto</span></div>
+        <h2 class="section-title">Consulta gratuita</h2>
+        <p style="color:var(--gris);margin-bottom:2rem;font-size:0.97rem">Primera consulta sin coste. Analizamos tu caso y te damos una respuesta honesta.</p>
+        <div class="info-entry">
+          <div class="info-entry-label">Teléfono</div>
+          <div class="info-entry-value">+34 910 000 000</div>
+        </div>
+        <div class="info-entry">
+          <div class="info-entry-label">Email</div>
+          <div class="info-entry-value">info@abogadosdva.com</div>
+        </div>
+        <div class="info-entry">
+          <div class="info-entry-label">Dirección</div>
+          <div class="info-entry-value">Madrid Centro · Zona Gran Vía</div>
+        </div>
+        <div class="info-entry">
+          <div class="info-entry-label">Horario</div>
+          <div class="info-entry-value">Lun–Vie: 9:00–20:00 · Con cita previa</div>
+        </div>
+        <div class="consulta-gratis">
+          <strong>Primera consulta gratuita y sin compromiso.</strong> Evaluamos tu situación en 30 minutos y te explicamos las opciones disponibles.
+        </div>
+      </div>
+      <div>
+        <form onsubmit="return false;">
+          <div class="frow">
+            <div class="fgroup">
+              <label>Nombre</label>
+              <input type="text" placeholder="Tu nombre">
+            </div>
+            <div class="fgroup">
+              <label>Teléfono</label>
+              <input type="tel" placeholder="+34 000 000 000">
+            </div>
+          </div>
+          <div class="fgroup">
+            <label>Email</label>
+            <input type="email" placeholder="tu@email.com">
+          </div>
+          <div class="fgroup">
+            <label>Área jurídica</label>
+            <select>
+              <option value="">Selecciona el área</option>
+              <option>Extranjería y residencia</option>
+              <option>Regularización 2026</option>
+              <option>Derecho de familia / Divorcio</option>
+              <option>Despido o derecho laboral</option>
+              <option>Herencias y testamentos</option>
+              <option>Derecho inmobiliario</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="fgroup">
+            <label>Describe brevemente tu caso</label>
+            <textarea placeholder="Cuéntanos tu situación en pocas palabras..."></textarea>
+          </div>
+          <button type="submit" class="btn-enviar">Solicitar Consulta Gratuita</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">ABOGADOS DVA</span>
+  <span class="footer-copy">© 2026 · Despacho de Abogados DVA · Madrid · Colegiados ICAM</span>
+</footer>
+
+</body>
+</html>
